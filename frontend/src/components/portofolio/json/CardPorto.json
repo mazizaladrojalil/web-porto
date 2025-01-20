@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Deliene Scarf",
+        "description": "Deliene Scarf adalah brand hijab premium yang mengutamakan keindahan, kenyamanan, dan kualitas. Kami menghadirkan koleksi hijab modern dengan desain elegan yang dirancang khusus untuk wanita Muslimah yang ingin tampil percaya diri di setiap kesempatan.",
+        "image": "/images/porto-1.svg",
+        "link": "https://www.instagram.com/delienescarf/"
+    },
+    {
+        "title": "Talent Model",
+        "description": "Sebagai bagian dari perjalanan saya di industri kreatif, saya pernah menjadi model talent hijab untuk berbagai proyek fotografi dan kampanye branding. Pengalaman ini mempertemukan saya dengan beragam tim kreatif, membantu saya memahami pentingnya visualisasi produk yang menarik dan berkesan.",
+        "image": "/images/porto-2.svg"
+    },
+    {
+        "title": "Magang Social Advertiser",
+        "description": "Pernah mengikuti magang di salah satu perusahaan di bandung yang bernama Laswi Tamansari Laswi City- KSO WIKA REALTY dalam mengelola akun sosial media dalam advertising dan membuat kontent selama 3 bulan.",
+        "image": "/images/porto-3.svg",
+        "link" : "https://www.instagram.com/laswi.heritage/"
+    }
+]
