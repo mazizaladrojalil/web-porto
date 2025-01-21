@@ -1,12 +1,14 @@
 
 "use client"
-import {motion} from "framer-motion"
+import {AnimationControls, motion} from "framer-motion"
 interface DescriptionAnimateProps {
     text:string,
-    index: number
+    index: number,
+    isAnimate:boolean
 }
 
-export const DescriptionAnimate = ({text, index} :DescriptionAnimateProps) => {
+export const DescriptionAnimate = ({text, index, isAnimate} :DescriptionAnimateProps) => {
+    
     return (
         <motion.span
             key={index}
@@ -15,16 +17,12 @@ export const DescriptionAnimate = ({text, index} :DescriptionAnimateProps) => {
                 opacity: 0,
                 y: 5,
             }}
-            animate={{
+            animate={isAnimate?{
                 filter: "blur(0px)",
                 opacity: 1,
                 y: 0,
-            }}
-            transition={{
-                duration: 1.8,
-                ease: "easeInOut",
-                delay: 0.145 * index,
-            }}
+            }:{}}
+            transition={{delay:index*0.1}}
             className="inline-block"
             >
             {text}&nbsp;

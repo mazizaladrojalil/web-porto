@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { AnimateWords } from '../animation/AnimateWords';
 import { motion, useInView, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
     portoCardAnimation,
     portoCardImageAnimation,
@@ -22,6 +22,7 @@ export const CardPorto = ({ title, description, image, children }: CardProps) =>
     const ref = useRef(null)
     const isInView = useInView(ref)
     const ctrls = useAnimation()
+    const [parentAnimate, setParentAnimate] = useState(false);
 
     useEffect(() => {
         if (isInView) {
@@ -38,6 +39,7 @@ export const CardPorto = ({ title, description, image, children }: CardProps) =>
             initial="hidden"
             variants={portoCardAnimation}
             aria-hidden={true}
+            onAnimationComplete={() => setParentAnimate(true)}
             >
                 <AnimateWords style="md:text-2xl text-xl font-bold " title={title} delay={1}/>
                 <motion.div
@@ -56,18 +58,18 @@ export const CardPorto = ({ title, description, image, children }: CardProps) =>
                         className="rounded-lg"
                     />
                 </motion.div>
-                <motion.div
-                    ref={ref}
+                <motion.div>
+                    {description && (
+                        <motion.p
+                        ref={ref}
                     animate={ctrls}
                     initial="hidden"
                     variants={portoCardDescriptionAnimation}
                     aria-hidden={true}
                     className='md:min-h-[125px]'
-                >
-                    {description && (
-                        <motion.p>
+                    >
                             {description.split(" ").map((word, index) => (
-                                <DescriptionAnimate key={index} text={word} index={index}/>
+                                <DescriptionAnimate key={index} text={word} index={index} isAnimate={parentAnimate}/>
                             ))}
                         </motion.p>
                     )}

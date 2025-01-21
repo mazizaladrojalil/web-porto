@@ -47,6 +47,7 @@ const CircleAnimation = () => {
                     alt="profile"
                     layout="fill"
                     objectFit="cover"
+                    draggable="false"
                 />
             </motion.div>
         </div>

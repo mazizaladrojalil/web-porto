@@ -34,6 +34,7 @@ const portoCardDescriptionAnimation = {
         opacity: 0,
     },
     visible: {
+        staggerChildren: 0.05,
         filter: "blur(0px)",
         opacity: 1,
         transition: {
